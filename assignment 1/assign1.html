@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1: Login Page</title>
+    <!-- Include the MD5 encryption library (CryptoJS) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
+</head>
+<body>
+    <h1>Login</h1>
+    <form id="loginForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="Enter Username">
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter Password">
+        <br>
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Div to display login result -->
+    <div id="loginResult"></div>
+
+    <!-- Scripts for your custom JavaScript files -->
+    <script src="src/md5Encrypt.js"></script> <!-- Given by the professor -->
+    <script src="src/checkLogin.js"></script>
+    <script src="assign1.js"></script>
+</body>
+</html>
