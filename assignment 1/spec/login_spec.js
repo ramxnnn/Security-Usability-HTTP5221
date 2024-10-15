@@ -12,24 +12,24 @@ describe('Login functionality', function() {
         expect(result).toBe(true);
     });
 
-    it('should return false for invalid login credentials', function() {
+    it('should return "Incorrect password" for invalid login credentials', function() {
         const storedUsername = 'testuser';
         const storedPasswordHash = md5Encrypt('password123');
         const result = checkLogin('testuser', 'wrongpassword', storedUsername, storedPasswordHash);
-        expect(result).toBe(false);
+        expect(result).toBe('Incorrect password');
     });
 
     it('should return "No username entered" for empty username', function() {
         const storedUsername = 'testuser';
         const storedPasswordHash = md5Encrypt('password123');
         const result = checkLogin('', 'password123', storedUsername, storedPasswordHash);
-        expect(result).toBe(false);
+        expect(result).toBe('No username entered');
     });
 
-    it('should return "No password entered"for empty password', function() {
+    it('should return "No password entered" for empty password', function() {
         const storedUsername = 'testuser';
         const storedPasswordHash = md5Encrypt('password123');
         const result = checkLogin('testuser', '', storedUsername, storedPasswordHash);
-        expect(result).toBe(false);
+        expect(result).toBe('No password entered');
     });
 });

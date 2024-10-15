@@ -6,9 +6,27 @@
  * @returns {boolean|string} - Returns true for a successful login or an error message for invalid input.
  */
 function checkLogin(inputUsername, inputPassword, storedUsername, storedPasswordHash) {
+    // Check if the username is empty
+    if (!inputUsername) {
+        return "No username entered";
+    }
+
+    // Check if the password is empty
+    if (!inputPassword) {
+        return "No password entered";
+    }
+
     // Encrypt the input password
     const inputPasswordHash = md5Encrypt(inputPassword);
 
     // Check if the input username and password hash match the stored values
-    return inputUsername === storedUsername && inputPasswordHash === storedPasswordHash;
+    if (inputUsername !== storedUsername) {
+        return "Username not found";
+    }
+
+    if (inputPasswordHash !== storedPasswordHash) {
+        return "Incorrect password";
+    }
+
+    return true;
 }
