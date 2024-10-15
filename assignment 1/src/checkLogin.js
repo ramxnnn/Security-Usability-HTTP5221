@@ -21,11 +21,11 @@ function checkLogin(inputUsername, inputPassword, storedUsername, storedPassword
 
     // Check if the input username and password hash match the stored values
     if (inputUsername !== storedUsername) {
-        return "Username not found";
+        return "Invalid Username or Password.";
     }
 
     if (inputPasswordHash !== storedPasswordHash) {
-        return "Incorrect password";
+        return "Invalid Username or Password.";
     }
 
     return true;
