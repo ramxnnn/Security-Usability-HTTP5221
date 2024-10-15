@@ -12,11 +12,11 @@ describe('Login functionality', function() {
         expect(result).toBe(true);
     });
 
-    it('should return "Incorrect password" for invalid login credentials', function() {
+    it('should return "Invalid Username or Password" for invalid login credentials', function() {
         const storedUsername = 'testuser';
         const storedPasswordHash = md5Encrypt('password123');
         const result = checkLogin('testuser', 'wrongpassword', storedUsername, storedPasswordHash);
-        expect(result).toBe('Incorrect password');
+        expect(result).toBe('Invalid Username or Password.');
     });
 
     it('should return "No username entered" for empty username', function() {
